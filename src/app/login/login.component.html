@@ -1,0 +1,47 @@
+<div class="form-container outer">
+    <div class="form-form">
+        <div class="form-form-wrap">
+            <div class="form-container">
+                <div class="form-content">
+
+                    <div class="d-flex user-meta">
+                        <img src="assets/assets/img/log.ico" class="usr-profile" alt="avatar">
+                        <div class="">
+                            <p class="">Akin</p>
+                        </div>
+                    </div>
+
+                    <form  [formGroup]="logFor" (ngSubmit)="verifUSer()" class="text-left">
+                        <div class="form">
+                            <div id="password-field" class="field-wrapper input mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <label for="password">Login :</label>
+                                 </div>
+                                 <input id="password" name="password" type="text" class="form-control" formControlName="login" name="login">
+                                 <div *ngIf="login.touched && login.invalid">
+                                    <small *ngIf="login.errors.required" class="text-danger">Login  est requis<br></small>
+                                  </div>
+                            </div>
+                            <div id="password-field" class="field-wrapper input mb-2">
+                                <div class="d-flex justify-content-between">
+                                    <label for="password">Mot de passe :</label>
+                                 </div>
+                                <input id="password" name="password" type="password" class="form-control"   formControlName="password"  name="password">
+                                 <div *ngIf="password.touched && password.invalid">
+                                    <small *ngIf="password.errors.required" class="text-danger">Mot de passe  est requis<br></small>
+                                  </div>
+                            </div>
+                            <div class="d-sm-flex justify-content-between">
+                                <div class="field-wrapper">
+                                    <button type="submit" class="btn btn-primary" [disabled]="logFor.invalid">Se Connecter</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>                    
+            </div>
+        </div>
+    </div>
+</div>

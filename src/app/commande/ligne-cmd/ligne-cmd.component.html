@@ -1,0 +1,50 @@
+<div id="content" class="main-content">
+    <div class="container" >
+
+        <div class="container">
+            <div class="row layout-top-spacing">
+                <div class="col-lg-12 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4> Lignes de Commande </h4>
+                                </div>
+                            </div>
+                        </div><hr>
+                        <div class="widget-content widget-content-area">
+                            <div class="table-responsive mb-4 mt-4">
+                                <table    class="table table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Photo </th>
+                                            <th>Réf Article </th>
+                                            <th>Nom Article</th> 
+                                            <th>Quantite</th>  
+                                            <th>Prix Unitaire </th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let l of ligneCMD">
+                                            <td><img src="http://127.0.0.1/hielo-772466825/shoppingcaart/shoping-cart/{{l.image}}" width="80" class="img-circle"></td>
+                                            <td>{{l.id_article}} </td>
+                                            <td>{{l.nom_article}}</td>
+                                            <td><span class="badge badge-info">{{l.quantite}}</span></td>
+                                            <td>{{l.prix}} $</td>
+                                             
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>    
+
+
+                        
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

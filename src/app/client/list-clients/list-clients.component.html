@@ -1,0 +1,64 @@
+<div id="content" class="main-content">
+    <div class="container" >
+
+        <div class="container">
+            <div class="row layout-top-spacing">
+                <div class="col-lg-12 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Liste Des Clients</h4>
+                                </div>
+                            </div>
+                        </div><hr>
+                        <div class="widget-content widget-content-area">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Cherche Ici" [(ngModel)]="term">
+                            </div>
+                            <div class="table-responsive mb-4 mt-4">
+                                <table   class="table table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Nom & Prénom</th>
+                                            <th>Téléphone</th> 
+                                            <th>E-mail</th> 
+                                            <th>address</th> 
+                                            <th>Password</th> 
+                                            <th>Raison Sociale</th>  
+                                            <th>Etat</th>  
+                                         
+                                            <th class="no-content">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let clt of clients | filter:term"> 
+                                            <td>{{clt.nom_client}} {{clt.prenom_client}}</td>
+                                            <td>{{clt.mobile}}</td>
+                                            <td>{{clt.email_client}}</td>
+                                            <td>{{clt.address1}}</td>
+                                            <td>{{clt.password_client}}</td>
+                                            <td>{{clt.company}}</td>
+                                            <td>{{clt.etat}}</td>
+                                            <td class="text-center">
+                                                <ul class="table-controls">
+                                                    <li><a (click)='traiterClient(clt.id_client, "Active")' data-toggle="tooltip" data-placement="top" title="Active"><i class="fa fa-thumbs-up" style="font-size:30px;color:#ABB2B9"></i></a></li>
+
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>    
+
+
+                        
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<div id="content" class="main-content">
+    <div class="container">
+
+        <div class="container">
+            <div class="row layout-top-spacing">
+                <div class="col-lg-12 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Modification d'un article </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="widget-content widget-content-area">
+                            <form [formGroup]="editArt" (ngSubmit)="saveArticle()">
+                                
+                                <div class="mb-4">
+                                    <p class="mg-b-10">Nom : </p>
+                                    <input type="text" name="nom" formControlName="nom" class="form-control">
+                                    <div *ngIf="nom.touched && nom.invalid">
+                                        <small *ngIf="nom.errors.required" class="text-danger">Nom article est
+                                            requis<br></small>
+
+                                    </div>
+                                </div>
+                    
+                                <div class="mb-4">
+                                    <p class="mg-b-10">Description : </p>
+                                    <input type="text" name="descrip" formControlName="descrip" class="form-control">
+                                    <div *ngIf="descrip.touched && descrip.invalid">
+                                        <small *ngIf="descrip.errors.required" class="text-danger">Description est
+                                            requis<br></small>
+                                    </div>
+                                </div> 
+
+                                <div class="mb-4">
+                                    <p class="mg-b-10">Prix : </p>
+                                    <input type="text" name="prix" formControlName="prix" class="form-control">
+                                    <div *ngIf="prix.touched && prix.invalid">
+                                        <small *ngIf="prix.errors.required" class="text-danger">Prix est
+                                            requis<br></small>
+                                        <small *ngIf="prix.errors.pattern" class="text-danger">Prix invalide<br></small>
+                                        <small *ngIf="prix.errors.maxlength" class="text-danger">Maximum 4 chiffres<br></small>
+                                      <small *ngIf="prix.errors.minlength" class="text-danger">Minimum 2 chiffres<br></small>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="mg-b-10">Photo : </p>
+                                    <input type="file" class="form-control"  (change)="onFileChanged($event)" name="single" formControlName="single" ng2FileSelect [uploader]="uploader" />
+                                    <div *ngIf="single.touched && single.invalid">
+                                      <small *ngIf="single.errors.required" class="text-danger">Photo  est requis<br></small> 
+                                    </div>
+                                  </div> 
+                                  
+
+                                        <div class="col-sm-6 col-md-3">
+                            
+                                    <button class="btn btn-blue-grey btn-lg btn-block"
+                                        [disabled]="editArt.invalid">Enregistrer</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

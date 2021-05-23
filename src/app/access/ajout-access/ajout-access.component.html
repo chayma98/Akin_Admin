@@ -1,0 +1,44 @@
+<div id="content" class="main-content">
+    <div class="container" >
+
+        <div class="container">
+            <div class="row layout-top-spacing">
+                <div class="col-lg-12 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4> Ajout d'un Accès </h4>
+                                </div>
+                            </div>
+                        </div><hr>
+                        <div class="widget-content widget-content-area">
+                            <form [formGroup]="addAcc" (ngSubmit)="saveAccess()">
+                                <div class="mb-4">
+                                    <p class="mg-b-10"> Article : </p>
+                                    <select name="article" formControlName="article" class="form-control">
+                                        <option *ngFor="let a of articles" value="{{a.id_article}}">{{a.nom_article}}</option>
+                                    </select>
+                                    
+                                </div>
+                                <div class="mb-4">
+                                    <p class="mg-b-10"> Client : </p>
+                                    <select name="client" formControlName="client" class="form-control">
+                                        <option *ngFor="let c of clients"  value="{{c.id_client}}">{{c.nom_client}} {{c.prenom_client}}</option>
+                                    </select>
+                                    
+                                </div>
+                    
+                                <div class="col-sm-6 col-md-3">
+                                    <button class="btn btn-blue-grey btn-lg btn-block" [disabled]="addAcc.invalid">Valider</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

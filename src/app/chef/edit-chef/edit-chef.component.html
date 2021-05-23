@@ -1,0 +1,94 @@
+<div id="content" class="main-content">
+    <div class="container" >
+
+        <div class="container">
+            <div class="row layout-top-spacing">
+                <div class="col-lg-12 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Modification d'un Chef</h4>
+                                </div>
+                            </div>
+                        </div><hr>
+                        <div class="widget-content widget-content-area">
+                            <form [formGroup]="editCH" (ngSubmit)="saveChef()">
+                                <div class="mb-4">
+                                  <p class="mg-b-10">CIN : </p>
+                                  <input type="text" name="cin" formControlName="cin" class="form-control"  > 
+                                  <div *ngIf="cin.touched && cin.invalid">
+                                    <small *ngIf="cin.errors.required" class="text-danger">CIN  est requis<br></small>
+                                    <small *ngIf="cin.errors.pattern" class="text-danger">N° de CIN Invalide<br></small>
+                                    <small *ngIf="cin.errors.maxlength" class="text-danger">Maximum 8 chiffres<br></small>
+                                    <small *ngIf="cin.errors.minlength" class="text-danger">Minimum 8 chiffres<br></small>
+                                  </div>
+                              </div>
+                                <div class="mb-4">
+                                    <p class="mg-b-10">Nom : </p>
+                                    <input type="text" name="nom" formControlName="nom" class="form-control"  > 
+                                    <div *ngIf="nom.touched && nom.invalid">
+                                      <small *ngIf="nom.errors.required" class="text-danger">Nom  est requis<br></small>
+                                      <small *ngIf="nom.errors.pattern" class="text-danger">Nom  est invalide<br></small>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="mg-b-10">Prénom : </p>
+                                    <input type="text" name="prenom" formControlName="prenom" class="form-control"  > 
+                                    <div *ngIf="prenom.touched && prenom.invalid">
+                                      <small *ngIf="prenom.errors.required" class="text-danger">Prénom  est requis<br></small>
+                                      <small *ngIf="prenom.errors.pattern" class="text-danger">Prénom  est invalide<br></small>
+
+                                    </div>
+                                  </div> 
+                                <div class="mb-4">
+                                    <p class="mg-b-10">Téléphone : </p>
+                                    <input type="text" name="tel" formControlName="tel" class="form-control"  > 
+                                    <div *ngIf="tel.touched && tel.invalid">
+                                      <small *ngIf="tel.errors.required" class="text-danger">Téléphone  est requis<br></small>
+                                      <small *ngIf="tel.errors.pattern" class="text-danger">N° de Téléphone  Invalide<br></small>
+                                      <small *ngIf="tel.errors.maxlength" class="text-danger">Maximum 8 chiffres<br></small>
+                                      <small *ngIf="tel.errors.minlength" class="text-danger">Minimum 8 chiffres<br></small>
+                                    </div>
+                                  </div>
+                                  <div class="mb-4">
+                                    <p class="mg-b-10">Email : </p>
+                                    <input type="text" name="email" formControlName="email" class="form-control"  > 
+                                    <div *ngIf="email.touched && email.invalid">
+                                      <small *ngIf="email.errors.required" class="text-danger">Email  est requis<br></small>
+                                      <small *ngIf="email.errors.email" class="text-danger">Email  est invalide<br></small>
+                                      <small *ngIf="email.errors.pattern" class="text-danger">Email  invalide<br></small>
+
+
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                  <p class="mg-b-10">Login : </p>
+                                  <input type="text" name="login" formControlName="login" class="form-control"  > 
+                                  <div *ngIf="login.touched && login.invalid">
+                                    <small *ngIf="login.errors.required" class="text-danger">login  est requis<br></small>
+                                  </div>
+                              </div>
+                              <div class="mb-4">
+                                <p class="mg-b-10">Password : </p>
+                                <input type="password" name="password" formControlName="password" class="form-control"  > 
+                                <div *ngIf="password.touched && password.invalid">
+                                  <small *ngIf="password.errors.required" class="text-danger">Password  est requis<br></small>
+                                  <small *ngIf="password.errors.maxlength" class="text-danger">Maximum 10 caractères<br></small>
+                                  <small *ngIf="password.errors.minlength" class="text-danger">Minimum 4 caractères<br></small>
+                                </div>
+                            </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <button class="btn btn-blue-grey btn-lg btn-block" [disabled]="editCH.invalid">Enregistrer</button>
+                                </div>
+                              </form>
+                        
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

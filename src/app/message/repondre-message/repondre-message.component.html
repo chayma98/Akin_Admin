@@ -1,0 +1,53 @@
+<div id="content" class="main-content">
+    <div class="container">
+
+        <div class="container">
+            <div class="row layout-top-spacing">
+                <div class="col-lg-12 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Envoyer Message </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                       
+                        <div class="widget-content widget-content-area">
+                            <form [formGroup]="repMesg" (ngSubmit)="saveMessage()">
+
+                                <div class="mb-4">
+                                    <p class="mg-b-10">sujet : </p>
+                                    <input type="text" name="sujet" formControlName="sujet" class="form-control"  > 
+                                    <div *ngIf="sujet.touched && sujet.invalid">
+                                      <small *ngIf="sujet.errors.required" class="text-danger">sujet  est requis<br></small>
+                                      
+
+                    
+                                    </div>
+                                  </div>    
+                                <div class="mb-4">
+                                    <p class="mg-b-10"> Réponse: </p>
+                                    <textarea type="text" rows="10" name="rep" formControlName="rep" class="form-control"></textarea>
+                                    <div *ngIf="rep.touched && rep.invalid">
+                                        <small *ngIf="rep.errors.required" class="text-danger">Message est requis<br></small>
+
+                                    </div>
+                                </div>
+                                 
+                                <div class="col-sm-6 col-md-3">
+                                    <button class="btn btn-blue-grey btn-lg btn-block"
+                                        [disabled]="repMesg.invalid">Enregistrer</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

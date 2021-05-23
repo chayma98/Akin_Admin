@@ -1,0 +1,60 @@
+<div id="content" class="main-content">
+    <div class="container" >
+
+        <div class="container">
+            <div class="row layout-top-spacing">
+                <div class="col-lg-12 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Liste des Messages</h4>
+                                </div>
+                            </div>
+                        </div><hr>
+                        <div class="widget-content widget-content-area">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Cherche Ici" [(ngModel)]="term">
+                            </div>
+                            <div class="table-responsive mb-4 mt-4">
+                                <table    class="table table-hover" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Client</th>
+                                            <th>Réf article</th>
+                                            <th>Date Envoie</th> 
+                                            <th>Contenue</th> 
+                                      
+                                
+                                            <th class="no-content">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let m of messages | filter:term"> 
+                                            <td>{{m.nom_client}} {{m.prenom_client}}</td>
+                                            <td>{{m.id_article}}</td>
+                                            <td>{{m.date_envoi}}</td>
+                                            <td>{{m.contenue}}</td>
+                                          
+                                            <td class="text-center">
+                                                <ul class="table-controls">
+                                                    <li><a  [routerLink]="['../rep', m.id_client]" data-toggle="tooltip" data-placement="top" title="Répondre"><i class="fa fa-pencil-square" style="font-size:30px;color:#ABB2B9"></i></a></li>
+                                        <li><a (click)="suppMsg(m.id_message)" data-toggle="tooltip" data-placement="top" title="Supprimer" ><i class="fa fa-trash" style="font-size:30px;color:#ABB2B9"></i> </a> </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>    
+
+
+                        
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
