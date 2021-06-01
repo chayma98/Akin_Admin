@@ -1,5 +1,6 @@
 # Akin
 
+This is the Admin side (web app) of the E-commerce website
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
 
 ## Development server
